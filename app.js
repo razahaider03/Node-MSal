@@ -37,9 +37,10 @@ const pca = new msal.ConfidentialClientApplication(msalConfig);
 app.get('/', (req, res) => {
     if (req.session.account) {
         res.send(`
-      <h1>Hello, ${req.session.account.name} , ${req.session.account}</h1>
+      <h1>Hello, ${req.session.account.name} </h1>
       <p><a href="/logout">Logout</a></p>
-    `);
+    `)
+    // console.log(req.session.account);
     } else {
         res.send('<a href="/login">Login with Microsoft</a>');
     }
